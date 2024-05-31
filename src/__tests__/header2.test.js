@@ -7,7 +7,7 @@ jest.mock("@/components/DarkModeSwitch", () => () => (
   <div data-testid="dark-mode-switch" />
 ));
 
-describe("Header Component Rendering DarkModeSwitch", () => {
+describe("Rendering DarkModeSwitch", () => {
   test("renders DarkModeSwitch component", () => {
     const { getByTestId } = render(<Header />);
 
