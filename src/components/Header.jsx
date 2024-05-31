@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import MenuItem from "./MenuItem";
 import { AiFillHome } from "react-icons/ai";
@@ -8,14 +8,8 @@ import { WiDayCloudy } from "react-icons/wi";
 import { MdManageSearch } from "react-icons/md";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import DarkModeSwitch from "./DarkModeSwitch";
-import ModalRecentSearch from "./ModalRecentSearch";
 
 export default function Header() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleModalButtonClick = () => {
-    setIsModalOpen(!isModalOpen);
-  };
 
   return (
     <div className="flex justify-between items-center p-3 max-w-6xl mx-auto">

@@ -2,17 +2,15 @@
 
 import React, { useState, useEffect } from "react";
 import { fetchWeatherData } from "@/app/api";
-import ModalRecentSearch from "./ModalRecentSearch";
 import Searches from "@/app/searches/page";
+
+export const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
 const Weather = ({ city }) => {
   const [weatherData, setWeatherData] = useState(null);
-  const [error] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,21 +18,21 @@ const Weather = ({ city }) => {
         if (city) {
           const data = await fetchWeatherData(city);
           setWeatherData(data);
+          setError(null);
         }
       } catch (error) {
         console.log("Error fetching weather data:", error);
+        setError("Error fetching weather data");
       }
     };
 
     fetchData();
   }, [city]);
 
-  const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
 
   return (
     <div>
+      {error && <Error message={error} /> }
       {weatherData && (
         <div className="text-center pt-8">
           <h2 className="text-2xl font-bold mb-4">
@@ -50,7 +48,6 @@ const Weather = ({ city }) => {
         </div>
       )}
       <Searches />
-      <ModalRecentSearch isOpen={isModalOpen} onClose={toggleModal} />
     </div>
   );
 };

@@ -1,29 +1,10 @@
 import React from "react";
-import styled from "styled-components";
-
-const ErrorContainer = styled.div`
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 20px;
-  border: 1px solid #f5c6cb;
-  border-radius: 5px;
-  margin-top: 20px;
-`;
-
-const ErrorMessage = styled.p`
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-`;
 
 const Error = ({ message }) => {
   return (
-    <ErrorContainer>
-      <ErrorMessage>{message}</ErrorMessage>
-    </ErrorContainer>
+    <div className="bg-red-100 text-red-700 p-4 border border-red-400 rounded mt-5">
+      <p className="m-0 font-sans">{message}</p>
+    </div>
   );
 };
 
