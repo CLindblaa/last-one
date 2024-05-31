@@ -19,10 +19,10 @@ const RandomContent = () => {
   return (
     <div className="mt-[8rem] border-2 border-gray-300 p-4 rounded shadow-md text-center text-amber-500">
       <h2 className="text-xl font-bold mb-4">Slumpmässigt Innehåll</h2>
-      <p className="mb-2 text-sm text-amber-600">
+      <p className="mb-2 text-sm text-pink-500">
         Här är ett slumpmässigt tal: {getRandomNumber()}
       </p>
-      <p className="text-sm font-bold text-pink-600">{randomFact}</p>
+      <p className="text-sm font-bold text-pink-400">{randomFact}</p>
     </div>
   );
 };
