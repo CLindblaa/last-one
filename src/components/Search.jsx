@@ -10,7 +10,7 @@ const Search = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(city);
-    addSearch(city); 
+    addSearch(city);
     setCity("");
   };
 

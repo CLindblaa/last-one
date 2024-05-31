@@ -29,10 +29,9 @@ const Weather = ({ city }) => {
     fetchData();
   }, [city]);
 
-
   return (
     <div>
-      {error && <Error message={error} /> }
+      {error && <Error message={error} />}
       {weatherData && (
         <div className="text-center pt-8">
           <h2 className="text-2xl font-bold mb-4">
