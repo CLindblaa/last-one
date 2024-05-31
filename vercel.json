@@ -1,8 +1,7 @@
 {
-  "build": {
-    "env": {
-      "API_KEY": "@api-key"
-    },
-    "command": "npm run build"
+  "git": {
+    "deploymentEnabled": {
+      "main": false
+    }
   }
 }
