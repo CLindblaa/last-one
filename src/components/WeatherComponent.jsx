@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchWeatherData } from "@/app/api";
 import Searches from "@/app/searches/page";
+import Error from "./Error";
 
 export const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -31,7 +32,7 @@ const Weather = ({ city }) => {
 
   return (
     <div>
-      {error && <Error message={error} />}
+      {error && <Error message={error} />}{" "}
       {weatherData && (
         <div className="text-center pt-8">
           <h2 className="text-2xl font-bold mb-4">
